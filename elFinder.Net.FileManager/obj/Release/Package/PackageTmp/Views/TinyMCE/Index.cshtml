@@ -1,0 +1,64 @@
+﻿@model elFinder.Net.FileManager.Models.TinyMCEModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<fieldset>
+    <legend>TinyMCEModel</legend>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Content)
+        @Html.ValidationMessageFor(model => model.Content)
+    </div>
+
+    <div class="editor-field">
+        <input type="text" id="fileurl" style="width:100%;" />
+    </div>
+
+    <p>
+        <input type="submit" value="Upload File" id="elfinder_button" />
+    </p>
+
+    @*<p><a href="#" id="hl-crop-image">Crop Image</a></p>
+
+        <p>
+            <img id="my-origin-image" src="http://filemanagerdemo.azurewebsites.net/Files/MyFolder/U4_E3_2880x18001.jpg"/>
+        </p>
+
+        <p>
+            <img id="my-cropped-image" src="#" style="display:none;" />
+        </p>*@
+
+</fieldset>
+
+@Styles.Render("~/Content/elfinder")
+<link rel="stylesheet" type="text/css" media="screen" href="~/Content/elfinder/themes/windows-10/css/theme.css">
+@section Scripts{
+    @Scripts.Render("~/bundles/jquery")
+    
+    @Scripts.Render("~/Scripts/elfinder")
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('#elfinder_button').click(function () {
+            $('<div id="finder" />').dialogelfinder({
+                //url: '/connector',
+                url: '/connector', // connector route defined in \App_Start\RouteConfig.cs
+                //customData: { folder: 'MyFolder', subFolder: '' },
+                closeOnEditorCallback: true,
+                getFileCallback: function (file) {
+                    $('#finder').dialogelfinder('close');
+                    $('#finder').closest('.elfinder').val(file.path);
+                    console.log($('#finder').closest('.elfinder-input'));
+                    $('#fileurl').val(file.url);
+                    //$("#my-origin-image").removeAttr("src").attr("src", file.url);
+                    $('#finder').remove();  //remove Elfinder
+                }
+            });
+        });
+
+    });
+    </script>
+
+}

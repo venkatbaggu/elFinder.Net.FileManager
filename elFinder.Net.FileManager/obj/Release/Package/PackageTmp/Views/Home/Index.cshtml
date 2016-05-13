@@ -1,0 +1,163 @@
+﻿@{
+    ViewBag.Title = "Files";
+    Layout = null;
+}
+@*@Styles.Render("~/Content/themes/ui-lightness/css", "~/Content/css")*@
+
+@Scripts.Render("~/bundles/jquery")
+@*<script type="text/javascript" src="@Url.Content("~/Content/elfinder/js/jquery-ui-1.8.11.min.js")"></script>*@
+@Styles.Render("~/Content/elfinder")
+@Scripts.Render("~/Scripts/elfinder")
+
+
+@*<link rel="stylesheet" type="text/css" media="screen" href="@Url.Content("~/Content/elfinder/css/smoothness-1.8.23/jquery-ui-1.8.23.custom.css")" />
+<script type="text/javascript" src="@Url.Content("~/Content/elfinder/js/jquery-1.7.1.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/elfinder/js/jquery-ui-1.8.11.min.js")"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="@Url.Content("~/Content/elfinder/css/elfinder.min.css")" />
+<script type="text/javascript" src="@Url.Content("~/Content/elfinder/js/elfinder.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/elfinder/js/i18n/elfinder.ru.js")"></script>*@
+
+@*<script type="text/javascript">
+        $(function () {
+            var myCommands = elFinder.prototype._options.commands;
+            var disabled = ['extract', 'archive', 'help', 'select'];
+            $.each(disabled, function (i, cmd) {
+                (idx = $.inArray(cmd, myCommands)) !== -1 && myCommands.splice(idx, 1);
+            });
+            var selectedFile = null;
+            var options = {
+                url: '/connector',
+                commands: myCommands,
+                lang: 'en',
+                uiOptions: {
+                    toolbar: [
+		                ['back', 'forward'],
+                        ['reload'],
+                        ['home', 'up'],
+		                ['mkdir', 'mkfile', 'upload'],
+		                ['open', 'download'],
+		                ['info'],
+		                ['quicklook'],
+		                ['copy', 'cut', 'paste'],
+		                ['rm'],
+		                ['duplicate', 'rename', 'edit', 'resize'],
+		                ['view', 'sort']
+	                ]
+                },
+                handlers: {
+                    select: function (event, elfinderInstance) {
+
+                        if (event.data.selected.length == 1) {
+                            var item = $('#' + event.data.selected[0]);
+                            if (!item.hasClass('directory')) {
+                                selectedFile = event.data.selected[0];
+                                $('#elfinder-selectFile').show();
+                                return;
+                            }
+                        }
+                        $('#elfinder-selectFile').hide();
+                        selectedFile = null;
+                    }
+                }
+            };
+            $('#elfinder').elfinder(options).elfinder('instance');
+
+            $('.elfinder-toolbar:first').append('<div class="ui-widget-content ui-corner-all elfinder-buttonset" id="elfinder-selectFile" style="display:none; float:right;">'+
+            '<div class="ui-state-default elfinder-button" title="Select" style="width: 100px;"></div>');
+            $('#elfinder-selectFile').click(function () {
+                if (selectedFile != null)
+                    $.post('files/selectFile', { target: selectedFile }, function (response) {
+                        alert(response);
+                    });
+
+            });
+        });
+</script>*@
+
+
+<script type="text/javascript" charset="utf-8">
+			var FileBrowserDialogue = {
+				init: function() {
+					// Here goes your code for setting your custom things onLoad.
+				},
+				mySubmit: function (file, fm) {
+				 	// pass selected file data to TinyMCE
+					parent.tinymce.activeEditor.windowManager.getParams().oninsert(file, fm);
+					// close popup window
+					parent.tinymce.activeEditor.windowManager.close();
+				}
+			}
+			// disable HTML quicklook plugin
+			elFinder.prototype.commands.quicklook.plugins[1] = null;
+			// Documentation for client options:
+			// https://github.com/Studio-42/elFinder/wiki/Client-configuration-options
+			$().ready(function() {
+
+				var getLang = function() {
+					try {
+						var full_lng = (navigator.browserLanguage || navigator.language || navigator.userLanguage);
+						var lng = full_lng.substr(0,2);
+						if (lng == 'ja') lng = 'jp';
+						else if (lng == 'pt') lng = 'pt_BR';
+						else if (lng == 'zh') lng = (full_lng.substr(0,5) == 'zh-tw')? 'zh_TW' : 'zh_CN';
+
+						if (lng != 'en') {
+							var script_tag		= document.createElement("script");
+							script_tag.type		= "text/javascript";
+							script_tag.src		= "js/i18n/elfinder."+lng+".js";
+							script_tag.charset = "utf-8";
+							$("head").append(script_tag);
+						}
+
+						return lng;
+					} catch(e) {
+						return 'en';
+					}
+				};
+
+				var elfinderInstance = $('#elfinder').elfinder({
+					resizable: false,
+					height: $(window).height() - 20,
+					//ui  : ['toolbar', 'places', 'tree', 'path', 'stat'],
+					url: '/connector', // connector route defined in \App_Start\RouteConfig.cs
+					//customData: { folder: '@@Model.Folder', subFolder: '@@Model.SubFolder' },
+					lang: getLang()                     // language (OPTIONAL)
+					,getFileCallback: function(file) { // editor callback
+						// file.url - commandsOptions.getfile.onlyURL = false (default)
+						// file     - commandsOptions.getfile.onlyURL = true (best with this alternative code)
+						FileBrowserDialogue.mySubmit(file, elfinderInstance); // pass selected file path to TinyMCE
+					}
+				}).elfinder('instance');
+
+				// set document.title dynamically etc.
+				var title = document.title;
+				elfinderInstance.bind('open', function(event) {
+					var data = event.data || null;
+					var path = '';
+
+					if (data && data.cwd) {
+						path = elfinderInstance.path(data.cwd.hash) || null;
+					}
+					document.title =  path? path + ':' + title : title;
+				});
+
+				// fit to window.height on window.resize
+				var resizeTimer = null;
+				$(window).resize(function() {
+					resizeTimer && clearTimeout(resizeTimer);
+					resizeTimer = setTimeout(function() {
+						var h = parseInt($(window).height()) - 20;
+						if (h != parseInt($('#elfinder').height())) {
+							elfinderInstance.resize('100%', h);
+						}
+					}, 200);
+				});
+
+			});
+</script>
+
+
+
+<div id="elfinder"></div>
+
+

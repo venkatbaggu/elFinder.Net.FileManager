@@ -1,0 +1,40 @@
+C:\Users\Madan Mohan Venkat B\Documents\GitHub\elFinder.Net-master\elFinder.Net-master\elFinder.Net\bin\Release\ElFinder.Net.dll
+C:\Users\Madan Mohan Venkat B\Documents\GitHub\elFinder.Net-master\elFinder.Net-master\elFinder.Net\bin\Release\ElFinder.Net.pdb
+C:\Users\Madan Mohan Venkat B\Documents\GitHub\elFinder.Net-master\elFinder.Net-master\elFinder.Net\bin\Release\Newtonsoft.Json.dll
+C:\Users\Madan Mohan Venkat B\Documents\GitHub\elFinder.Net-master\elFinder.Net-master\elFinder.Net\bin\Release\System.Web.Mvc.dll
+C:\Users\Madan Mohan Venkat B\Documents\GitHub\elFinder.Net-master\elFinder.Net-master\elFinder.Net\bin\Release\System.Web.Razor.dll
+C:\Users\Madan Mohan Venkat B\Documents\GitHub\elFinder.Net-master\elFinder.Net-master\elFinder.Net\bin\Release\System.Web.WebPages.Razor.dll
+C:\Users\Madan Mohan Venkat B\Documents\GitHub\elFinder.Net-master\elFinder.Net-master\elFinder.Net\bin\Release\System.Web.WebPages.dll
+C:\Users\Madan Mohan Venkat B\Documents\GitHub\elFinder.Net-master\elFinder.Net-master\elFinder.Net\bin\Release\Microsoft.Web.Infrastructure.dll
+C:\Users\Madan Mohan Venkat B\Documents\GitHub\elFinder.Net-master\elFinder.Net-master\elFinder.Net\bin\Release\System.Web.WebPages.Deployment.dll
+C:\Users\Madan Mohan Venkat B\Documents\GitHub\elFinder.Net-master\elFinder.Net-master\elFinder.Net\bin\Release\Newtonsoft.Json.xml
+C:\Users\Madan Mohan Venkat B\Documents\GitHub\elFinder.Net-master\elFinder.Net-master\elFinder.Net\bin\Release\System.Web.Mvc.xml
+C:\Users\Madan Mohan Venkat B\Documents\GitHub\elFinder.Net-master\elFinder.Net-master\elFinder.Net\bin\Release\System.Web.Razor.xml
+C:\Users\Madan Mohan Venkat B\Documents\GitHub\elFinder.Net-master\elFinder.Net-master\elFinder.Net\bin\Release\System.Web.WebPages.Razor.xml
+C:\Users\Madan Mohan Venkat B\Documents\GitHub\elFinder.Net-master\elFinder.Net-master\elFinder.Net\bin\Release\System.Web.WebPages.xml
+C:\Users\Madan Mohan Venkat B\Documents\GitHub\elFinder.Net-master\elFinder.Net-master\elFinder.Net\bin\Release\Microsoft.Web.Infrastructure.xml
+C:\Users\Madan Mohan Venkat B\Documents\GitHub\elFinder.Net-master\elFinder.Net-master\elFinder.Net\bin\Release\System.Web.WebPages.Deployment.xml
+C:\Users\Madan Mohan Venkat B\Documents\GitHub\elFinder.Net-master\elFinder.Net-master\elFinder.Net\obj\Release\elFinder.Net.csprojResolveAssemblyReference.cache
+C:\Users\Madan Mohan Venkat B\Documents\GitHub\elFinder.Net-master\elFinder.Net-master\elFinder.Net\obj\Release\ElFinder.Net.dll
+C:\Users\Madan Mohan Venkat B\Documents\GitHub\elFinder.Net-master\elFinder.Net-master\elFinder.Net\obj\Release\ElFinder.Net.pdb
+C:\Users\Madan Mohan Venkat B\Documents\GitHub\elFinder.Net-master\elFinder.Net-master\elFinder.Net\bin\Release\StackifyHttpTracer.dll
+C:\Users\Madan Mohan Venkat B\Documents\Visual Studio 2015\Projects\elFinder.Net.FileManager\elFinder.Net\bin\Release\ElFinder.Net.dll
+C:\Users\Madan Mohan Venkat B\Documents\Visual Studio 2015\Projects\elFinder.Net.FileManager\elFinder.Net\bin\Release\ElFinder.Net.pdb
+C:\Users\Madan Mohan Venkat B\Documents\Visual Studio 2015\Projects\elFinder.Net.FileManager\elFinder.Net\bin\Release\Newtonsoft.Json.dll
+C:\Users\Madan Mohan Venkat B\Documents\Visual Studio 2015\Projects\elFinder.Net.FileManager\elFinder.Net\bin\Release\StackifyHttpTracer.dll
+C:\Users\Madan Mohan Venkat B\Documents\Visual Studio 2015\Projects\elFinder.Net.FileManager\elFinder.Net\bin\Release\System.Web.Mvc.dll
+C:\Users\Madan Mohan Venkat B\Documents\Visual Studio 2015\Projects\elFinder.Net.FileManager\elFinder.Net\bin\Release\System.Web.Razor.dll
+C:\Users\Madan Mohan Venkat B\Documents\Visual Studio 2015\Projects\elFinder.Net.FileManager\elFinder.Net\bin\Release\System.Web.WebPages.Razor.dll
+C:\Users\Madan Mohan Venkat B\Documents\Visual Studio 2015\Projects\elFinder.Net.FileManager\elFinder.Net\bin\Release\System.Web.WebPages.dll
+C:\Users\Madan Mohan Venkat B\Documents\Visual Studio 2015\Projects\elFinder.Net.FileManager\elFinder.Net\bin\Release\Microsoft.Web.Infrastructure.dll
+C:\Users\Madan Mohan Venkat B\Documents\Visual Studio 2015\Projects\elFinder.Net.FileManager\elFinder.Net\bin\Release\System.Web.WebPages.Deployment.dll
+C:\Users\Madan Mohan Venkat B\Documents\Visual Studio 2015\Projects\elFinder.Net.FileManager\elFinder.Net\bin\Release\Newtonsoft.Json.xml
+C:\Users\Madan Mohan Venkat B\Documents\Visual Studio 2015\Projects\elFinder.Net.FileManager\elFinder.Net\bin\Release\System.Web.Mvc.xml
+C:\Users\Madan Mohan Venkat B\Documents\Visual Studio 2015\Projects\elFinder.Net.FileManager\elFinder.Net\bin\Release\System.Web.Razor.xml
+C:\Users\Madan Mohan Venkat B\Documents\Visual Studio 2015\Projects\elFinder.Net.FileManager\elFinder.Net\bin\Release\System.Web.WebPages.Razor.xml
+C:\Users\Madan Mohan Venkat B\Documents\Visual Studio 2015\Projects\elFinder.Net.FileManager\elFinder.Net\bin\Release\System.Web.WebPages.xml
+C:\Users\Madan Mohan Venkat B\Documents\Visual Studio 2015\Projects\elFinder.Net.FileManager\elFinder.Net\bin\Release\Microsoft.Web.Infrastructure.xml
+C:\Users\Madan Mohan Venkat B\Documents\Visual Studio 2015\Projects\elFinder.Net.FileManager\elFinder.Net\bin\Release\System.Web.WebPages.Deployment.xml
+C:\Users\Madan Mohan Venkat B\Documents\Visual Studio 2015\Projects\elFinder.Net.FileManager\elFinder.Net\obj\Release\elFinder.Net.csprojResolveAssemblyReference.cache
+C:\Users\Madan Mohan Venkat B\Documents\Visual Studio 2015\Projects\elFinder.Net.FileManager\elFinder.Net\obj\Release\ElFinder.Net.dll
+C:\Users\Madan Mohan Venkat B\Documents\Visual Studio 2015\Projects\elFinder.Net.FileManager\elFinder.Net\obj\Release\ElFinder.Net.pdb
